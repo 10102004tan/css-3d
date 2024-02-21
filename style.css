@@ -1,0 +1,130 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+body {
+    background: radial-gradient(rgb(5,221,245),rgb(6,150,253));
+    height: 100vh;
+}
+
+.container-custom{
+    height: 60vh;
+    width: 30vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    perspective: 1000px;
+}
+
+.box {
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    background-color: aquamarine;
+    top: 100px;
+    left: 100px;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: all 0.25s linear;
+    /* animation: animation 5s infinite; */
+    
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    background-color: #0000009c;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 30px;
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.card div {
+    border: 2px solid #fff;
+    width: calc((250px - 4px) / 3);
+    height: calc((250px - 4px) / 3);
+}
+
+#front {
+    transform: translateZ(125px);
+}
+
+#front div {
+    background-color: blue;
+}
+
+#back {
+    transform: translateZ(-125px);
+}
+
+#back div {
+    background-color: rgb(236, 60, 16);
+}
+
+#left {
+    right: 125px;
+    transform: rotateY(-90deg);
+}
+
+#left div {
+    background-color: #e2f81b;
+}
+
+#right {
+    left: 125px;
+    transform: rotateY(90deg);
+}
+
+#right div {
+    background-color: #d1cccc;
+}
+
+#bottom {
+    top: 125px;
+    transform: rotateX(90deg);
+}
+
+#bottom div{
+    background-color: #f3260b;
+}
+
+#top {
+    bottom: 125px;
+    transform: rotateX(-90deg);
+}
+
+#top div{
+    background-color: #000;
+}
+
+@keyframes animation {
+    0% {
+        transform: rotateY(-45deg) rotateX(45deg) ;
+    }
+
+    25% {
+        transform: rotateY(-45deg) rotateX(-45deg) ;
+    }
+
+
+    50% {
+        transform: rotateY(45deg) rotateX(45deg) ;
+    }
+
+    75% {
+        transform: rotateY(45deg) rotateX(-45deg) ;
+    }
+
+    0% {
+        transform: rotateY(-45deg) rotateX(45deg) ;
+    }
+
+}
